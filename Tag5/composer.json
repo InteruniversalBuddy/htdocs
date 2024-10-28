@@ -1,0 +1,21 @@
+{
+    "name": "interuniversalbuddy/tag5",
+    "description": "Tag 5, Fridge Projekt",
+    "autoload": {
+        "psr-4": {
+            "Interuniversalbuddy\\Tag5\\": "src/",
+            "lib\\": "lib/",
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "InteruniversalBuddy",
+            "email": "InteruniversalBuddy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "steampixel/simple-php-router": "^0.7.1"
+    }
+}

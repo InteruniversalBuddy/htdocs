@@ -1,0 +1,21 @@
+{
+    "name": "interuniversalbuddy/amuriqi_m295",
+    "description": "M295-Tag3",
+    "autoload": {
+        "psr-4": {
+            "Interuniversalbuddy\\AmuriqiM295\\": "src/",
+            "lib\\": "lib/",
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "InteruniversalBuddy",
+            "email": "InteruniversalBuddy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "steampixel/simple-php-router": "^0.7.1"
+    }
+}

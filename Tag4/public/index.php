@@ -1,11 +1,35 @@
 <?php
+
+use Steampixel\Route;
+function checkIP(){
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $apiURL = "https://ip-api.io/json/" . $ip;
+    $ch = curl_init($apiURL);
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $apiResponse = curl_exec($ch);
+    curl_close($ch);
+
+    $data = json_decode($apiResponse, true);
+
+    if(isset($data['countryCode'])&&$data['countryCode']=='CH'){
+      return true;
+    }else{
+        return false;
+    }
+}
+
+if(!checkIP()){
+    echo "Land nicht erlaubt.";
+    exit;
+}else{
+
 declare(strict_types=1);
 
 session_start();
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Steampixel\Route;
 
 /**
  * Startseite - Zeigt die Willkommensnachricht.
@@ -95,3 +119,4 @@ Route::pathNotFound(function (): void {
 
 // Führe den Router aus
 Route::run('/');
+}
